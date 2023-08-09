@@ -1,0 +1,71 @@
+Exception in NSApplicationAWT:
+ java.lang.NullPointerException: Cannot invoke "java.awt.image.VolatileImage.getGraphics()" because "this.backBuffers[i]" is null
+java.desktop/java.awt.Component$BltBufferStrategy.showSubRegion(Component.java:4537)
+java.desktop/java.awt.Component$BltSubRegionBufferStrategy.showIfNotLost(Component.java:4662)
+java.desktop/javax.swing.BufferStrategyPaintManager.show(BufferStrategyPaintManager.java:208)
+java.desktop/javax.swing.RepaintManager.show(RepaintManager.java:1454)
+java.desktop/javax.swing.SwingPaintEventDispatcher.createPaintEvent(SwingPaintEventDispatcher.java:62)
+java.desktop/sun.lwawt.LWComponentPeer.postPaintEvent(LWComponentPeer.java:1159)
+java.desktop/sun.lwawt.LWComponentPeer.repaintPeer(LWComponentPeer.java:1378)
+java.desktop/sun.lwawt.LWContainerPeer.repaintPeer(LWContainerPeer.java:201)
+java.desktop/sun.lwawt.LWComponentPeer.repaintPeer(LWComponentPeer.java:1369)
+java.desktop/sun.lwawt.LWWindowPeer.notifyReshape(LWWindowPeer.java:745)
+java.desktop/sun.lwawt.macosx.CPlatformWindow.deliverMoveResizeEvent(CPlatformWindow.java:1252)
+0   CoreFoundation                      0x00007ff80e799e5b __exceptionPreprocess + 242
+1   libobjc.A.dylib                     0x00007ff80e4fab9d objc_exception_throw + 48
+2   CoreFoundation                      0x00007ff80e799cbf +[NSException raise:format:] + 189
+3   libawt_lwawt.dylib                  0x00000001584262e2 -[AWTWindow _deliverMoveResizeEvent] + 1170
+4   CoreFoundation                      0x00007ff80e713e73 __CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 12
+5   CoreFoundation                      0x00007ff80e7b1349 ___CFXRegistrationPost_block_invoke + 49
+6   CoreFoundation                      0x00007ff80e7b12c6 _CFXRegistrationPost + 496
+7   CoreFoundation                      0x00007ff80e6e5786 _CFXNotificationPost + 733
+8   Foundation                          0x00007ff80f52d996 -[NSNotificationCenter postNotificationName:object:userInfo:] + 82
+9   AppKit                              0x00007ff81119905a -[NSWindow _setFrameCommon:display:fromServer:] + 4515
+10  AppKit                              0x00007ff8117e425d -[_NSFullScreenMenuBarCompanionController resizeContentWindow] + 209
+11  AppKit                              0x00007ff811196c71 NSPerformVisuallyAtomicChange + 132
+12  AppKit                              0x00007ff8117e42e7 -[_NSFullScreenMenuBarCompanionController layout] + 83
+13  AppKit                              0x00007ff81117e2b7 -[NSThemeFrame _updateTitlebarContainerViewFrameIfNecessary] + 479
+14  AppKit                              0x00007ff81117ddd4 -[NSThemeFrame _tileTitlebarAndRedisplay:] + 43
+15  AppKit                              0x00007ff81118b5fd -[NSTitledFrame tileAndSetWindowShape:] + 66
+16  AppKit                              0x00007ff8117e311f -[_NSFullScreenMenuBarCompanionController layoutTitlebarViews] + 525
+17  AppKit                              0x00007ff8117e4fb7 -[_NSFullScreenMenuBarCompanionController tile] + 326
+18  AppKit                              0x00007ff811c5bc9f -[NSWindow(NSFullScreen) _fullScreenStatusChanged] + 187
+19  AppKit                              0x00007ff81119747e __25-[NSWindow setStyleMask:]_block_invoke + 1973
+20  AppKit                              0x00007ff811196c71 NSPerformVisuallyAtomicChange + 132
+21  AppKit                              0x00007ff811196b7e -[NSWindow setStyleMask:] + 170
+22  AppKit                              0x00007ff811aa1c58 __76-[_NSEnterFullScreenTransitionController setupWindowForAfterFullScreenEnter]_block_invoke + 116
+23  AppKit                              0x00007ff811196c71 NSPerformVisuallyAtomicChange + 132
+24  AppKit                              0x00007ff811aa1b85 -[_NSEnterFullScreenTransitionController setupWindowForAfterFullScreenEnter] + 317
+25  AppKit                              0x00007ff811aa5aad -[_NSEnterFullScreenTransitionController start] + 930
+26  AppKit                              0x00007ff811c0ddd9 -[_NSFullScreenSpace(Transitions) startTransition:] + 133
+27  AppKit                              0x00007ff81134c64d -[NSApplication(NSResponder) sendAction:to:from:] + 288
+28  AppKit                              0x00007ff81134c4f4 -[NSControl sendAction:to:] + 86
+29  AppKit                              0x00007ff81134c426 __26-[NSCell _sendActionFrom:]_block_invoke + 131
+30  AppKit                              0x00007ff81134c32f -[NSCell _sendActionFrom:] + 171
+31  AppKit                              0x00007ff81134c276 -[NSButtonCell _sendActionFrom:] + 96
+32  AppKit                              0x00007ff811a65aed -[_NSThemeZoomWidgetCell _sendActionFrom:] + 71
+33  AppKit                              0x00007ff8113490e4 NSControlTrackMouse + 1817
+34  AppKit                              0x00007ff8113489a7 -[NSCell trackMouse:inRect:ofView:untilMouseUp:] + 121
+35  AppKit                              0x00007ff81134887a -[NSButtonCell trackMouse:inRect:ofView:untilMouseUp:] + 679
+36  AppKit                              0x00007ff811a65788 -[_NSThemeZoomWidgetCell trackMouse:inRect:ofView:untilMouseUp:] + 331
+37  AppKit                              0x00007ff811347c48 -[NSControl mouseDown:] + 678
+38  AppKit                              0x00007ff811346127 -[NSWindow(NSEventRouting) _handleMouseDownEvent:isDelayedEvent:] + 4949
+39  AppKit                              0x00007ff8112ba0a4 -[NSWindow(NSEventRouting) _reallySendEvent:isDelayedEvent:] + 2582
+40  AppKit                              0x00007ff8112b946e -[NSWindow(NSEventRouting) sendEvent:] + 352
+41  libawt_lwawt.dylib                  0x0000000158420dc7 -[AWTWindow_Normal sendEvent:] + 87
+42  AppKit                              0x00007ff8112b783c -[NSApplication(NSEvent) sendEvent:] + 352
+43  libjcef.dylib                       0x00000001812fc901 -[NSApplication(JCEFApplication) _swizzled_sendEvent:] + 97
+44  libosxapp.dylib                     0x0000000114019ea5 -[NSApplicationAWT sendEvent:] + 437
+45  AppKit                              0x00007ff81157080b -[NSApplication _handleEvent:] + 65
+46  AppKit                              0x00007ff81113837e -[NSApplication run] + 623
+47  libosxapp.dylib                     0x0000000114019aa5 +[NSApplicationAWT runAWTLoopWithApp:] + 165
+48  libawt_lwawt.dylib                  0x000000015848a240 +[AWTStarter starter:headless:] + 496
+49  libosxapp.dylib                     0x000000011401b9ef +[ThreadUtilities invokeBlockCopy:] + 15
+50  Foundation                          0x00007ff80f5a5d63 __NSThreadPerformPerform + 179
+51  CoreFoundation                      0x00007ff80e71e84d __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17
+52  CoreFoundation                      0x00007ff80e71e7b5 __CFRunLoopDoSource0 + 180
+53  CoreFoundation                      0x00007ff80e71e534 __CFRunLoopDoSources0 + 242
+54  CoreFoundation                      0x00007ff80e71cf6b __CFRunLoopRun + 893
+55  CoreFoundation                      0x00007ff80e71c52d CFRunLoopRunSpecific + 563
+56  pycharm                             0x000000010821ef32 main + 370
+57  dyld                                0x000000011415c4fe start + 462

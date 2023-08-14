@@ -21,3 +21,4 @@ Students who successfully complete this course will:
   
 ![image](https://github.com/ryanmaki18/OBA410/assets/130192949/a125f4d2-ba01-4978-976f-3553b4fd0a91)
 
+-- Final Project was to take a real data set and report/present our findings and what that data implies about real-world problems.
